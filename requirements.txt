@@ -1,7 +1,8 @@
-streamlit
-pandas
-scikit-learn
-joblib
-pytz
 folium
 geopandas
+matplotlib
+pandas
+requests
+streamlit
+branca
+streamlit-folium
