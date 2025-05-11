@@ -8,3 +8,4 @@ branca
 streamlit-folium
 python-dotenv
 plotly
+hopsworks
