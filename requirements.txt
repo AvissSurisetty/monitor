@@ -6,3 +6,5 @@ requests
 streamlit
 branca
 streamlit-folium
+python-dotenv
+plotly
