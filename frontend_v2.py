@@ -16,6 +16,18 @@ sys.path.append(parent_dir)
 from src.config import DATA_DIR
 from src.inference import fetch_next_hour_predictions, load_batch_of_features_from_store
 from src.plot_utils import plot_prediction
+import hopsworks
+import os
+
+def get_hopsworks_project():
+    api_key = os.getenv("HOPSWORKS_API_KEY")
+    if not api_key:
+        raise ValueError("HOPSWORKS_API_KEY environment variable not set.")
+    return hopsworks.login(api_key=api_key)
+
+def get_feature_store():
+    project = get_hopsworks_project()
+    return project.get_feature_store()
 
 # ------------------ SESSION STATE ------------------
 if "map_created" not in st.session_state:
