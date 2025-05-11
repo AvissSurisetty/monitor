@@ -18,6 +18,10 @@ from src.inference import fetch_next_hour_predictions, load_batch_of_features_fr
 from src.plot_utils import plot_prediction
 import hopsworks
 import os
+import os
+
+FEATURE_VIEW_NAME = os.getenv("FEATURE_VIEW_NAME", "default_view_name")
+FEATURE_VIEW_VERSION = int(os.getenv("FEATURE_VIEW_VERSION", "1"))
 
 def get_hopsworks_project():
     api_key = os.getenv("HOPSWORKS_API_KEY")
